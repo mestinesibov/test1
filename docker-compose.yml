@@ -1,0 +1,23 @@
+version: '3.5'
+
+services:
+    postgres:
+        container_name: postgres
+        image: postgres:12.1
+        env_file: 
+          - .env
+        volumes:
+          - ./.postgresdb/:/var/lib/postgresql/data
+        ports:
+          - "${POSTGRES_PORT}:5432"
+        restart: on-failure
+ 
+    web:
+        build: .
+        restart: "always"
+        ports:
+        - "8000:8000"
+        volumes:
+        - .:/code/
+        depends_on:
+            - "postgres"
