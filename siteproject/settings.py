@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'siteproject.wsgi.application'
 DATABASES = {
             'default': {
                 'ENGINE': 'django.db.backends.postgresql',
-                'NAME': 'food-stories',
+                'NAME': 'siteproject',
                 'USER': 'mesti',
                 'PASSWORD': '1',
                 'PORT': '5432',
