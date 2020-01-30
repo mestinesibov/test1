@@ -12,12 +12,12 @@ services:
           - "${POSTGRES_PORT}:5432"
         restart: on-failure
  
-    web:
-        build: .
-        restart: "always"
-        ports:
-        - "8000:8000"
-        volumes:
-        - .:/code/
-        depends_on:
-            - "postgres"
+    # web:
+    #     build: .
+    #     restart: "always"
+    #     ports:
+    #     - "8000:8000"
+    #     volumes:
+    #     - .:/code/
+    #     depends_on:
+    #         - "postgres"
